@@ -22873,6 +22873,13 @@ in
     gtk3Support = true;
   };
 
+  thunderbird-appmenu = callPackage ../applications/networking/mailreaders/thunderbird-appmenu/default.nix {
+    inherit (rustPackages_1_44) cargo rustc;
+    libpng = libpng_apng;
+    nss = nss_3_44;
+    gtk3Support = true;
+  };
+
   thunderbolt = callPackage ../os-specific/linux/thunderbolt {};
 
   thunderbird-bin-78 = callPackage ../applications/networking/mailreaders/thunderbird-bin { };
