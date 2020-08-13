@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, cmake, vala, glib, gtk2, gtk3 }:
+{ stdenv, fetchFromGitHub, cmake, vala, glib, gtk2, gtk3, harfbuzz }:
 stdenv.mkDerivation rec {
   pname = "vala-panel-appmenu-xfce";
   version = "0.7.3.2";
@@ -14,6 +14,8 @@ stdenv.mkDerivation rec {
 
   nativeBuildInputs = [ cmake vala ];
   buildInputs = [ glib gtk2 gtk3 ];
+
+  NIX_CFLAGS_COMPILE = [ "-I${harfbuzz.dev}/include/harfbuzz" ];
 
   configurePhase = ''
     cmake . -DGTK3_INCLUDE_GDK=
