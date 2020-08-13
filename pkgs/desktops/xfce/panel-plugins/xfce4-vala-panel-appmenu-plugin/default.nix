@@ -28,7 +28,7 @@ stdenv.mkDerivation rec {
     })
   ];
 
-  configureFlags = [ "CPPFLAGS=-I${harfbuzz}/include/harfbuzz" ];
+  NIX_CFLAGS_COMPILE = [ "-I${harfbuzz.dev}/include/harfbuzz" ];
 
   cmakeFlags = [
       "-DENABLE_XFCE=ON"
