@@ -19551,6 +19551,8 @@ in
 
   crun = callPackage ../applications/virtualization/crun {};
 
+  crossover = callPackage ../applications/misc/crossover {};
+
   csdp = callPackage ../applications/science/math/csdp { };
 
   ctop = callPackage ../tools/system/ctop { };
